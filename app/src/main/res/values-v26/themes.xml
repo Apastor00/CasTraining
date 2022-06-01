@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="titulo">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <string name="label_icon_explorer">Explorar</string>
+</resources>

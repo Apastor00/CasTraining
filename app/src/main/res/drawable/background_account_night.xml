@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_outline_account_circle_24_night">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/md_theme_light_background"/>
+        </shape>
+    </item>
+</selector>
