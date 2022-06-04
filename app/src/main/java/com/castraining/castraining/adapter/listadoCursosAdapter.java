@@ -8,9 +8,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.castraining.castraining.R;
 import com.castraining.castraining.api.cursos.RcvListadoDatos;
 import com.castraining.castraining.databinding.RecyclerItemCursoBinding;
-import com.castraining.castraining.view.CursosDetalles;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,10 +42,22 @@ public class listadoCursosAdapter extends RecyclerView.Adapter<listadoCursosAdap
         String tit = datoString.getTitle();
         int id = datoString.getId();
         String des = datoString.getDescripcion();
+        String img = datoString.getLogo();
         holder.binding.rcvTxvTituloCurso.setText(tit);
         holder.binding.rcvTxvDescripcionCurso.setText(des);
-        //holder.binding.imgFechaConvocatoria.setImageResource(R.drawable.ic_launcher);
-        holder.binding.rcvItemCardView.setOnClickListener(new View.OnClickListener() {
+        if (img =="R.drawable.ic_launcher") {
+            Picasso.get()
+                    .load(R.drawable.ic_launcher)
+                    .resize(100, 100)
+                    .into(holder.binding.rcvImgCurso);
+        }else {
+            Picasso.get()
+                    .load(img)
+                    .resize(100, 100)
+                    .error(R.drawable.ic_launcher)
+                    .into(holder.binding.rcvImgCurso);
+        }
+        /*holder.binding.rcvItemCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), CursosDetalles.class);
@@ -52,9 +65,8 @@ public class listadoCursosAdapter extends RecyclerView.Adapter<listadoCursosAdap
                 intent.putExtra("title", tit);
                 view.getContext().startActivity(intent);
             }
-        });
+        });*/
     }
-
     public void filtrado (String txtFiltrado){
         int longitud = txtFiltrado.length();
         if (longitud==0){
@@ -63,18 +75,20 @@ public class listadoCursosAdapter extends RecyclerView.Adapter<listadoCursosAdap
         }
         else {
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                List<RcvListadoDatos> colection = datosCursos.stream()
-                        .filter(i -> i.getTitle().toLowerCase()
-                                 .contains(txtFiltrado.toLowerCase()))
+                List<RcvListadoDatos> filtroTitulo = datosCursos.stream()
+                        .filter(rcvListadoDatos -> rcvListadoDatos.getTitle().toLowerCase()
+                                 .contains(txtFiltrado.toLowerCase()) || rcvListadoDatos.getSkuCurso().toLowerCase()
+                                .contains(txtFiltrado.toLowerCase()))
                         .collect(Collectors.toList());
                 datosCursos.clear();
-                datosCursos.addAll(colection);
+                datosCursos.addAll(filtroTitulo);
+
             }else {
                 for (RcvListadoDatos rcv: datosCursos){
-                    if (rcv.getTitle().toLowerCase().contains(txtFiltrado.toLowerCase())){
+                    if (rcv.getTitle().toLowerCase().contains(txtFiltrado.toLowerCase()) || rcv.getSkuCurso()
+                            .toLowerCase().contains(txtFiltrado.toLowerCase())){
                         datosCursos.add(rcv);
                     }
-
                 }
             }
         }

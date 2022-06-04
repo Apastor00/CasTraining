@@ -1,5 +1,7 @@
 package com.castraining.castraining.api.cursos;
 
+import android.os.Parcelable;
+
 public class RcvListadoDatos {
     /** Clase que nos sirve para obtener el título y el id del curso */
 
@@ -7,14 +9,24 @@ public class RcvListadoDatos {
     private int id;
     private String descripcion;
     private String logo;
+    private String skuCurso;
 
     public RcvListadoDatos (){}
 
-    public RcvListadoDatos(String title, int id, String descripcion, String logo) {
+    public RcvListadoDatos(String title, int id, String descripcion, String logo, String skuCurso) {
         this.title = title;
         this.id = id;
         this.descripcion = descripcion;
         this.logo = logo;
+        this.skuCurso = skuCurso;
+    }
+
+    public String getSkuCurso() {
+        return skuCurso;
+    }
+
+    public void setSkuCurso(String skuCurso) {
+        this.skuCurso = skuCurso;
     }
 
     public String getTitle() {

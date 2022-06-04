@@ -4,19 +4,20 @@ import android.media.tv.TvContract;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class YoastHeadJson {
 
     @SerializedName("description")
     private String descripcion;
-    private List<LogoCurso> og_image;
+    private List<imageUrl> og_image;
 
-    public List<LogoCurso> getOg_image() {
+    public List<imageUrl> getOg_image() {
         return og_image;
     }
 
-    public void setOg_image(List<LogoCurso> og_image) {
+    public void setOg_image(List<imageUrl> og_image) {
         this.og_image = og_image;
     }
 

@@ -3,6 +3,9 @@ package com.castraining.castraining.api.cursos;
 import com.google.gson.annotations.SerializedName;
 
 public class AcfCursos {
+
+    @SerializedName("sku_curso")
+    private String skuCurso;
     @SerializedName("duracion_curso")
     private String duracionCurso;
     @SerializedName("audiencia_curso")
@@ -21,6 +24,14 @@ public class AcfCursos {
     private String certificacionCurso;
     @SerializedName("examen_incluido")
     private String examenCursoIncluido;
+
+    public String getSkuCurso() {
+        return skuCurso;
+    }
+
+    public void setSkuCurso(String skuCurso) {
+        this.skuCurso = skuCurso;
+    }
 
     public String getDuracionCurso() {
         return duracionCurso;

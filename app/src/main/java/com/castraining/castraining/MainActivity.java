@@ -1,52 +1,64 @@
 package com.castraining.castraining;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 
-import android.content.Intent;
+
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.castraining.castraining.databinding.ActivityMainBinding;
-import com.castraining.castraining.view.Cursos;
+import com.castraining.castraining.fragment.accountFragment;
+import com.castraining.castraining.fragment.explorar;
+import com.castraining.castraining.fragment.listadoCursos;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity{
 
+    public static final String URL_BASE = "https://cas-training.com/wp-json/wp/v2/";
 
+    ActivityMainBinding mainBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ActivityMainBinding mainBinding;
         super.onCreate(savedInstanceState);
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
 
-        mainBinding.btnConvocatoria.setOnClickListener(this);
-        mainBinding.btnCursos.setOnClickListener(this);
-        mainBinding.btnExamenes.setOnClickListener(this);
-        mainBinding.btnMensaje.setOnClickListener(this);
-        mainBinding.btnInicioSesion.setOnClickListener(this);
+        NavController navController = NavHostFragment.findNavController(mainBinding.fragmentNavHost.getFragment());
+        NavigationUI.setupWithNavController(mainBinding.navView, navController);
 
+        mainBinding.navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
+
+                if (menuitem.getItemId() == R.id.listado_cursos){
+                    selectFragment(new listadoCursos());
+                }
+                if (menuitem.getItemId() == R.id.cuenta_usuario){
+                    selectFragment(new accountFragment());
+                }
+                if (menuitem.getItemId() == R.id.explorar){
+                    selectFragment(new explorar());
+                }
+                return true;
+            }
+        });
+    }
+    //Método que permite seleccionar el Fragment a mostrar
+    private void selectFragment(Fragment fragment){
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_nav_host, fragment)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .commit();
     }
 
-    @Override
-    public void onClick(View view) {
-
-        switch (view.getId()){
-            case R.id.btn_convocatoria:
-                /*Intent intent = new Intent(this, Convocatoria.class);
-                startActivity(intent);*/
-                break;
-            case R.id.btn_cursos:
-                Intent intentCursos = new Intent(this, Cursos.class);
-                startActivity(intentCursos);
-                break;
-            case R.id.btn_examenes:
-                /*Intent intentExamenes = new Intent(this, Examenes.class);
-                startActivity(intentExamenes);
-                break;*/
-            default:
-                break;
-        }
-
-    }
 }

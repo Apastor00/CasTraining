@@ -1,14 +1,13 @@
 package com.castraining.castraining.fragment;
 
-import static com.castraining.castraining.view.Cursos.URL_BASE;
 
-import android.annotation.SuppressLint;
+import static com.castraining.castraining.MainActivity.URL_BASE;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,10 +19,10 @@ import com.castraining.castraining.adapter.listadoCursosAdapter;
 import com.castraining.castraining.api.Interface.ApiCasTraining;
 import com.castraining.castraining.api.cursos.CursosResponse;
 import com.castraining.castraining.api.cursos.RcvListadoDatos;
+import com.castraining.castraining.api.cursos.YoastHeadJson;
 import com.castraining.castraining.databinding.FragmentListadoCursosBinding;
-import com.castraining.castraining.databinding.RecyclerItemCursoBinding;
+import com.google.gson.internal.LinkedTreeMap;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,7 +43,6 @@ public class listadoCursos extends Fragment implements SearchView.OnQueryTextLis
 
     private listadoCursosAdapter adapterListadoCurso = null;
     private FragmentListadoCursosBinding listadoCursosBinding;
-    private RecyclerItemCursoBinding itemCursoBinding;
 
     //Retrofit
     private HttpLoggingInterceptor loggingInterceptor;
@@ -58,7 +56,7 @@ public class listadoCursos extends Fragment implements SearchView.OnQueryTextLis
 
 
     // TODO: Rename and change types of parameters
-    private Serializable mParam1;
+    private ArrayList<RcvListadoDatos> mParam1;
 
     public listadoCursos() {
         // Required empty public constructor
@@ -84,7 +82,7 @@ public class listadoCursos extends Fragment implements SearchView.OnQueryTextLis
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getSerializable("listadoCursos");
+            mParam1 = getArguments().getParcelable("listadoCursos");
         }
     }
 
@@ -116,9 +114,10 @@ public class listadoCursos extends Fragment implements SearchView.OnQueryTextLis
                     String title = cursosResponse.getTitle().getRendered();
                     String descripcion = cursosResponse.getYoastHeadjson().getDescripcion();
                     int id = cursosResponse.getId();
-                    //String logo = cursosResponse.getYoastHeadjson().getOg_image().get(0).getUrl();
-                    String logo = "imagen 1";
-                    listaCursos.add(new RcvListadoDatos(title, id, descripcion, logo));
+                    String skuCurso = cursosResponse.getAcfCursos().getSkuCurso();
+                    String logo = img(cursosResponse.getYoastHeadjson());
+                    //String logo = "imagen 1";
+                    listaCursos.add(new RcvListadoDatos(title, id, descripcion, logo, skuCurso));
                 }
                 adapterListadoCurso = new listadoCursosAdapter(listaCursos);
                 listadoCursosBinding.rcvListadoCurso.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -131,7 +130,6 @@ public class listadoCursos extends Fragment implements SearchView.OnQueryTextLis
                 Log.d("Call getCursos:", t.getMessage());
             }
         });
-
         //return inflater.inflate(R.layout.fragment_listado_cursos, container, false);
         return listadoCursosBinding.getRoot();
     }
@@ -145,5 +143,26 @@ public class listadoCursos extends Fragment implements SearchView.OnQueryTextLis
     public boolean onQueryTextChange(String s) {
         adapterListadoCurso.filtrado(s);
         return false;
+    }
+
+    public String img(YoastHeadJson yoastHeadJson){
+        String imageApi = SelectImg(yoastHeadJson);
+        String imagenCurso = "";
+        if (imageApi == "imagenOk"){
+            imagenCurso = yoastHeadJson.getOg_image().get(0).getUrl();
+            /*Object objeto = yoastHeadJson.getOg_image();
+            LinkedTreeMap<Object, Object> arbolYoastHead = (LinkedTreeMap) objeto;
+            imagenCurso = arbolYoastHead.get("url").toString();*/
+        }else imagenCurso = "R.drawable.ic_launcher";
+        return imagenCurso;
+    }
+    public String SelectImg(YoastHeadJson yoastHeadJson){
+        //Metodo para seleccionar si el campo og_img viene
+        String select = "";
+        if (yoastHeadJson.getOg_image() == null) {
+            //Si el campo imagen no viene
+            select = "noImagen";
+        }else { select = "imagenOk"; } //Campo imagen viene con url
+        return select;
     }
 }

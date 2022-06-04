@@ -5,37 +5,18 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.listadoCursos">
-    <ImageButton
-        android:id="@+id/imgbutonBack"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        style="@style/icon_back"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp">
-    </ImageButton>
     <SearchView
         android:id="@+id/serchView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/searchView"
+        style="@style/estiloBtn"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toStartOf="@id/imgbutonLogin"
-        app:layout_constraintStart_toEndOf="@+id/imgbutonBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintCircleRadius="20dp">
     </SearchView>
-    <ImageButton
-        android:id="@+id/imgbutonLogin"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        style="@style/icon_account"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="16dp">
-    </ImageButton>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvListadoCurso"
         android:layout_width="match_parent"
@@ -44,6 +25,6 @@
         app:layout_constraintTop_toBottomOf="@id/serchView"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-    </androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintStart_toStartOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

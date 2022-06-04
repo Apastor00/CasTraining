@@ -4,4 +4,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="label_icon_explorer">Explorar</string>
+    <string name="editLoginPassword1">Introduce tu contraseña</string>
+    <string name="edtLoginMail">Introduce tu mail</string>
+    <string name="btnInicioCorreo">Inicia sesión</string>
+    <string name="btnNuevoUsuario">Nuevo usuario</string>
+    <string name="navegar">Navegar</string>
+    <string name="title_explorar">Explorar</string>
+    <string name="title_cursos">Cursos</string>
+    <string name="title_account">Cuenta</string>
 </resources>

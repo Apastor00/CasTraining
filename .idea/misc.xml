@@ -4,14 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.178125" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable-v24/ic_applelogo_night.xml" value="0.135" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.381" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable-v24/ic_launcher_background_bis.xml" value="0.381" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.381" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/background_account.xml" value="0.214" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/background_account_night.xml" value="0.1755" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/background_apple.xml" value="0.153" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/background_apple_night.xml" value="0.135" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/background_back.xml" value="0.214" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/background_back_night.xml" value="0.1755" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/background_facebook.xml" value="0.153" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/background_google.xml" value="0.153" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/background_rcvtxt.xml" value="0.335" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/background_searchview.xml" value="0.153" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/background_serachview.xml" value="0.335" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/btn_mensaje.xml" value="0.1355" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/btn_navigation.xml" value="0.153" />
@@ -19,24 +25,36 @@
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/btn_primario_dark.xml" value="0.2335" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/btn_primario_light.xml" value="0.1885" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/btn_secundario.xml" value="0.139" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/estilo_btn.xml" value="0.254" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/estilo_btn_night.xml" value="0.176" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/estilo_txt_input.xml" value="0.135" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/ic_account_24.xml" value="0.215" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/ic_applelogo.xml" value="0.135" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.335" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.215" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1475" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/ic_launcher_background_bis.xml" value="0.381" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/ic_logocastraining.xml" value="0.1885" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/ic_outline_account_circle_24.xml" value="0.335" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/ic_outline_account_circle_24_night.xml" value="0.135" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/ic_outline_mic_24.xml" value="0.335" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/search_light.xml" value="0.299" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/splashscreen_light.xml" value="0.131" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/drawable/splashscreen_night.xml" value="0.2285" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/activity_actividad_principal.xml" value="0.4015625" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/activity_cursos.xml" value="0.335" />
-        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/activity_main.xml" value="0.45" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/activity_navigation_bar.xml" value="0.29257246376811596" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/activity_splash_screen.xml" value="0.28125" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/fragment_account.xml" value="0.4015625" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/fragment_carga_datos.xml" value="0.4015625" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/fragment_explorar.xml" value="0.2078125" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/fragment_fabricantes_carrusel.xml" value="0.2078125" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/fragment_listado_cursos.xml" value="0.24003623188405798" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/fragment_navigation_bar.xml" value="0.45" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/fragment_top_bar.xml" value="0.2078125" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/layout/recycler_item_curso.xml" value="0.335" />
+        <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/menu/bottom_nav_menu.xml" value="0.4005208333333333" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2685" />
         <entry key="../../../Artemi/AndroidStudioProjects/CasTraining/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.381" />
       </map>
